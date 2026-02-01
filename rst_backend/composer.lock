@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e4bb4da3759426cb8e72ef0ae83ca0e3",
+    "content-hash": "292f414ee041d5800c9d4b499ffdc2ab",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1503,16 +1503,16 @@
         },
         {
             "name": "laravel/sanctum",
-            "version": "v4.2.3",
+            "version": "v4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sanctum.git",
-                "reference": "47d26f1d310879ff757b971f5a6fc631d18663fd"
+                "reference": "c978c82b2b8ab685468a7ca35224497d541b775a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sanctum/zipball/47d26f1d310879ff757b971f5a6fc631d18663fd",
-                "reference": "47d26f1d310879ff757b971f5a6fc631d18663fd",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/c978c82b2b8ab685468a7ca35224497d541b775a",
+                "reference": "c978c82b2b8ab685468a7ca35224497d541b775a",
                 "shasum": ""
             },
             "require": {
@@ -1562,7 +1562,7 @@
                 "issues": "https://github.com/laravel/sanctum/issues",
                 "source": "https://github.com/laravel/sanctum"
             },
-            "time": "2026-01-11T18:20:25+00:00"
+            "time": "2026-01-22T22:27:01+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -10045,5 +10045,5 @@
         "php": "^8.2"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
