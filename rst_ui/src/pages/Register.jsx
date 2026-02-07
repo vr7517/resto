@@ -23,7 +23,7 @@ const Register = () => {
     console.log(" Sending register data:", data);
 
     const response = await axios.post(
-      "http://localhost:8000/api/register",
+      "http://rst_backend.test/api/register",
       {
         name: data.name,
         phone: data.mobile,
