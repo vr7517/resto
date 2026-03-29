@@ -27,7 +27,8 @@ const Login = ({ isEdit = false }) => {
       axios.defaults.withCredentials = true;
 
       const response = await axios.post(
-        "http://rst_backend.test/api/login",
+        // "http://rst_backend.test/api/login",
+        "http://localhost:8000/api/login",
         {
           email: data.email,
           password: data.password,

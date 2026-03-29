@@ -22,8 +22,8 @@ class AuthController extends Controller
                 'phone'    => 'nullable|string|min:10|max:12',
             ]);
             $data['password'] = Hash::make($data['password']);
+            $data['role']='User';
             $user = User::create($data);
-
 
             $token = $user->createToken('auth-token')->plainTextToken;
 
