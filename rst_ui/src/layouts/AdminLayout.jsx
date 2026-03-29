@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet,NavLink } from "react-router-dom";
 
 export default function AdminLayout() {
   return (
@@ -9,9 +9,9 @@ export default function AdminLayout() {
         <h2 className="text-xl font-bold mb-6">Admin Panel</h2>
 
         <nav className="space-y-3">
-          <a href="/admin/dashboard" className="block hover:text-gray-300">
+          <NavLink to="/admin/dashboard" className="block hover:text-gray-300">
             Dashboard
-          </a>
+          </NavLink>
           <a href="/admin/users" className="block hover:text-gray-300">
             Users
           </a>
