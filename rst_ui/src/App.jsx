@@ -13,6 +13,12 @@ import Navbar from './pages/Navbar'
 import Footer from './pages/Footer'
 import MenuPage from './pages/MenuPage'
 import HomePage from './pages/HomePage'
+import ProductList from './pages/admin/products/ProductList';
+import CategoryList from './pages/admin/category/CategoryList';
+import CategoryForm from './pages/admin/category/CategoryForm';
+import ProductForm from './pages/admin/products/ProductForm';
+import ProductShow from './pages/admin/products/ProductShow';
+import CategoryShow from './pages/admin/category/CategoryShow';
 const App = () => {
    const location = useLocation();
      const hideNavbar = location.pathname.startsWith("/admin");
@@ -35,6 +41,18 @@ const App = () => {
           }
         >
           <Route path="dashboard" element={<AdminDashboard />} />
+          {/* <Route path="users" element={<Users />} /> */}
+          <Route path="categories" element={<CategoryList />} />
+          <Route path="/admin/categories/create" element={<CategoryForm />} />
+          <Route path="/admin/categories/:id/edit" element={<CategoryForm />} />
+          <Route path="/admin/categories/:id" element={<CategoryShow/>} />  
+
+          <Route path="products" element={<ProductList />} />
+          <Route path="/admin/products/create" element={<ProductForm />} />
+          <Route path="/admin/products/:id/edit" element={<ProductForm />} />
+
+          <Route path="/admin/products/:id" element={<ProductShow/>} />  
+          
 
         </Route>
         
