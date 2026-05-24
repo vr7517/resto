@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { useLocation } from "react-router-dom";
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -19,6 +19,7 @@ import CategoryForm from './pages/admin/category/CategoryForm';
 import ProductForm from './pages/admin/products/ProductForm';
 import ProductShow from './pages/admin/products/ProductShow';
 import CategoryShow from './pages/admin/category/CategoryShow';
+import NormalLayout from './layouts/NormalLayout';
 const App = () => {
    const location = useLocation();
      const hideNavbar = location.pathname.startsWith("/admin");
@@ -27,9 +28,14 @@ const App = () => {
       <Toaster position="top-center" reverseOrder={false} />
       {!hideNavbar && <Navbar />}
       <Routes>
+        
+        <Route path="/" element={<NormalLayout />}>
         <Route path="/" element={<HomePage/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/menu" element={<MenuPage />} />
+        </Route>
+
 
         {/* Admin Routes */}
         <Route

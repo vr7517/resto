@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, use, useContext } from 'react';
 import { ShoppingCart, Menu, X, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
  import { Link } from "react-router-dom";
 
 
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const user=localStorage.getItem("user");
+  
 
   // Scroll karne par navbar ka background change hoga
   useEffect(() => {
@@ -63,7 +66,10 @@ const Navbar = () => {
           </button>
           
           <button className="hidden md:block p-2 hover:bg-white/10 rounded-full">
-            <User size={22} />
+           {
+            user?(<User size={22} />):(<Link to="/login" className="text-sm font-medium tracking-widest uppercase hover:text-orange-400 transition-colors">Login</Link>)
+          }
+            
           </button>
 
           {/* Mobile Menu Toggle */}

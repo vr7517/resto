@@ -23,4 +23,4 @@ Route::delete('/categories/{id}', [CategoryController::class, 'destroy']);
 
 Route::apiResource('products', ProductController::class);
 
-// Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
+Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
