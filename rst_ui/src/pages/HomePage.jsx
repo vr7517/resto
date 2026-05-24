@@ -1,8 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Utensils, Star, Clock } from 'lucide-react';
+import { useNavigate, Link } from "react-router-dom";
+
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-[#0f1113] text-white overflow-x-hidden">
       {/* 1. Hero Section */}
@@ -76,7 +80,7 @@ const HomePage = () => {
             <h2 className="text-3xl font-serif italic">Our Specialties</h2>
             <p className="text-slate-400 mt-2">Handcrafted dishes made with seasonal ingredients.</p>
           </div>
-          <button className="text-orange-400 font-semibold border-b border-orange-400/30 pb-1">View Full Menu</button>
+          <button onClick={() => navigate("/menu")} className="text-orange-400 font-semibold border-b border-orange-400/30 pb-1">View Full Menu</button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

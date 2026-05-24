@@ -1,4 +1,5 @@
 import { Outlet, NavLink, useLocation } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import { 
   LayoutDashboard, 
   Package, 
@@ -12,6 +13,8 @@ import {
 
 export default function AdminLayout() {
   const location = useLocation();
+  const { logout,user } = useAuth();
+  console.log("Current User in AdminLayout →", user);
 
   // Helper to format breadcrumbs based on URL
   const pathnames = location.pathname.split("/").filter((x) => x);
@@ -56,7 +59,9 @@ export default function AdminLayout() {
         <div className="mt-auto p-8 border-t border-slate-900">
           <nav className="space-y-2">
             <NavItem to="/admin/settings" icon={Settings} label="Settings" />
-            <button className="w-full flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-red-400 hover:bg-red-400/10 rounded-2xl transition-all">
+            <button 
+             onClick={logout}
+            className="w-full flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-red-400 hover:bg-red-400/10 rounded-2xl transition-all">
               <LogOut size={20} />
               <span className="font-medium">Logout</span>
             </button>
@@ -89,8 +94,8 @@ export default function AdminLayout() {
 
             <div className="flex items-center gap-3 group cursor-pointer">
               <div className="text-right hidden md:block">
-                <p className="text-sm font-bold text-slate-800">Admin User</p>
-                <p className="text-[10px] text-slate-400 font-medium">Super Admin</p>
+                <p className="text-sm font-bold text-slate-800">{user?.name}</p>
+                <p className="text-[10px] text-slate-400 font-medium">  {user?.role}</p>
               </div>
               <div className="w-11 h-11 rounded-2xl bg-orange-100 flex items-center justify-center text-orange-600 border border-orange-200 shadow-sm group-hover:shadow-md transition-all">
                 <UserCircle size={28} />
